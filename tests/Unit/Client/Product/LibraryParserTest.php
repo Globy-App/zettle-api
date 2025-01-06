@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Unit\Client\Product;
+namespace GlobyApp\Zettle\Tests\Unit\Client\Product;
 
-use LauLamanApps\IzettleApi\API\Product\DiscountCollection;
-use LauLamanApps\IzettleApi\API\Product\ProductCollection;
-use LauLamanApps\IzettleApi\Client\Product\DiscountBuilderInterface;
-use LauLamanApps\IzettleApi\Client\Product\LibraryBuilder;
-use LauLamanApps\IzettleApi\Client\Product\ProductBuilderInterface;
+use GlobyApp\Zettle\API\Product\DiscountCollection;
+use GlobyApp\Zettle\API\Product\ProductCollection;
+use GlobyApp\Zettle\Client\Product\DiscountBuilderInterface;
+use GlobyApp\Zettle\Client\Product\LibraryBuilder;
+use GlobyApp\Zettle\Client\Product\ProductBuilderInterface;
 use Mockery;
 use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Uuid;

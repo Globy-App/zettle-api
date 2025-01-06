@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client\Finance;
+namespace GlobyApp\Zettle\Client\Finance;
 
-use LauLamanApps\IzettleApi\API\Finance\AccountTransaction;
+use GlobyApp\Zettle\API\Finance\AccountTransaction;
 
 interface AccountTransactionBuilderInterface
 {

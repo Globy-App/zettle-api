@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Unit\Client;
+namespace GlobyApp\Zettle\Tests\Unit\Client;
 
 use DateTime;
-use LauLamanApps\IzettleApi\API\Purchase\Purchase;
-use LauLamanApps\IzettleApi\API\Purchase\PurchaseHistory;
-use LauLamanApps\IzettleApi\API\Purchase\User;
-use LauLamanApps\IzettleApi\Client\Purchase\PurchaseBuilderInterface;
-use LauLamanApps\IzettleApi\Client\Purchase\PurchaseHistoryBuilderInterface;
-use LauLamanApps\IzettleApi\Client\PurchaseClient;
-use LauLamanApps\IzettleApi\IzettleClientInterface;
-use LauLamanApps\IzettleApi\Tests\Unit\MockeryAssertionTrait;
+use GlobyApp\Zettle\API\Purchase\Purchase;
+use GlobyApp\Zettle\API\Purchase\PurchaseHistory;
+use GlobyApp\Zettle\API\Purchase\User;
+use GlobyApp\Zettle\Client\Purchase\PurchaseBuilderInterface;
+use GlobyApp\Zettle\Client\Purchase\PurchaseHistoryBuilderInterface;
+use GlobyApp\Zettle\Client\PurchaseClient;
+use GlobyApp\Zettle\IzettleClientInterface;
+use GlobyApp\Zettle\Tests\Unit\MockeryAssertionTrait;
 use Mockery;
 use Money\Money;
 use PHPUnit\Framework\TestCase;

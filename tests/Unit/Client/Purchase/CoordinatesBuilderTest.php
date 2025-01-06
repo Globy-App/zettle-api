@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Unit\Client\Purchase;
+namespace GlobyApp\Zettle\Tests\Unit\Client\Purchase;
 
-use LauLamanApps\IzettleApi\API\Purchase\Coordinates;
-use LauLamanApps\IzettleApi\Client\Purchase\CoordinatesBuilder;
+use GlobyApp\Zettle\API\Purchase\Coordinates;
+use GlobyApp\Zettle\Client\Purchase\CoordinatesBuilder;
 use PHPUnit\Framework\TestCase;
 
 /**

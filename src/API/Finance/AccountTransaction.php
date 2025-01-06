@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\API\Finance;
+namespace GlobyApp\Zettle\API\Finance;
 
 use DateTime;
-use LauLamanApps\IzettleApi\API\Finance\Enum\TransactionType;
+use GlobyApp\Zettle\API\Finance\Enum\TransactionType;
 use Ramsey\Uuid\UuidInterface;
 
 final class AccountTransaction

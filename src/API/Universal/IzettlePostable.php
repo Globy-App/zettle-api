@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\API\Universal;
+namespace GlobyApp\Zettle\API\Universal;
 
 interface IzettlePostable
 {

@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client\Exception;
+namespace GlobyApp\Zettle\Client\Exception;
 
+use GlobyApp\Zettle\Client\Exception\ClientException as IzettleClientException;
+use GlobyApp\Zettle\Client\Exception\InvalidClient\InvalidClientIdException;
+use GlobyApp\Zettle\Client\Exception\InvalidGrant\InvalidUsernameOrPasswordException;
+use GlobyApp\Zettle\Client\Exception\InvalidGrant\TooManyFailedAttemptsException;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\RequestException;
-use LauLamanApps\IzettleApi\Client\Exception\ClientException as IzettleClientException;
-use LauLamanApps\IzettleApi\Client\Exception\InvalidClient\InvalidClientIdException;
-use LauLamanApps\IzettleApi\Client\Exception\InvalidGrant\InvalidUsernameOrPasswordException;
-use LauLamanApps\IzettleApi\Client\Exception\InvalidGrant\TooManyFailedAttemptsException;
 
 final class GuzzleClientExceptionHandler
 {

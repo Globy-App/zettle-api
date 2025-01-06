@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client\Exception\InvalidClient;
+namespace GlobyApp\Zettle\Client\Exception\InvalidClient;
 
-use LauLamanApps\IzettleApi\Client\Exception\InvalidClientException;
+use GlobyApp\Zettle\Client\Exception\InvalidClientException;
 
 final class InvalidClientIdException extends InvalidClientException
 {

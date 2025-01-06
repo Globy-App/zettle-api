@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client;
+namespace GlobyApp\Zettle\Client;
 
 use DateTime;
 use DateTimeImmutable;

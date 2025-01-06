@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Unit\Client\Purchase;
+namespace GlobyApp\Zettle\Tests\Unit\Client\Purchase;
 
 use DateTime;
-use LauLamanApps\IzettleApi\API\Purchase\Coordinates;
-use LauLamanApps\IzettleApi\API\Purchase\Purchase;
-use LauLamanApps\IzettleApi\Client\Purchase\CoordinatesBuilderInterface;
-use LauLamanApps\IzettleApi\Client\Purchase\PaymentBuilderInterface;
-use LauLamanApps\IzettleApi\Client\Purchase\ProductBuilderInterface;
-use LauLamanApps\IzettleApi\Client\Purchase\PurchaseBuilder;
-use LauLamanApps\IzettleApi\Client\Purchase\VatBuilderInterface;
+use GlobyApp\Zettle\API\Purchase\Coordinates;
+use GlobyApp\Zettle\API\Purchase\Purchase;
+use GlobyApp\Zettle\Client\Purchase\CoordinatesBuilderInterface;
+use GlobyApp\Zettle\Client\Purchase\PaymentBuilderInterface;
+use GlobyApp\Zettle\Client\Purchase\ProductBuilderInterface;
+use GlobyApp\Zettle\Client\Purchase\PurchaseBuilder;
+use GlobyApp\Zettle\Client\Purchase\VatBuilderInterface;
 use Mockery;
 use Money\Currency;
 use PHPUnit\Framework\TestCase;

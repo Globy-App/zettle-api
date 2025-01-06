@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client\Universal;
+namespace GlobyApp\Zettle\Client\Universal;
 
-use LauLamanApps\IzettleApi\API\Image;
-use LauLamanApps\IzettleApi\API\ImageCollection;
+use GlobyApp\Zettle\API\Image;
+use GlobyApp\Zettle\API\ImageCollection;
 
 final class ImageBuilder implements ImageBuilderInterface
 {

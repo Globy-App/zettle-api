@@ -31,8 +31,8 @@ Get yourself an access token. you'll need an `clientId` and `clientSecret` for t
 for performance benefits, it might be wise to store the access token in a cache like [Redis](https://redis.io/).
 ```php
 use GuzzleHttp\Client;
-use LauLamanApps\IzettleApi\GuzzleIzettleClient;
-use LauLamanApps\IzettleApi\IzettleClientFactory;
+use GlobyApp\Zettle\GuzzleIzettleClient;
+use GlobyApp\Zettle\IzettleClientFactory;
 
 $izettleClient = new GuzzleIzettleClient(new Client(), 'clientId', 'clientSecret');
 $accessToken = $izettleClient->getAccessTokenFromUserLogin('john.doe@example.com', 'password');
@@ -47,8 +47,8 @@ $library = $productClient->getLibrary();
 
 ```php
 use GuzzleHttp\Client;
-use LauLamanApps\IzettleApi\GuzzleIzettleClient;
-use LauLamanApps\IzettleApi\IzettleClientFactory;
+use GlobyApp\Zettle\GuzzleIzettleClient;
+use GlobyApp\Zettle\IzettleClientFactory;
 
 $accessToken = ...; //-- Get from cache
 

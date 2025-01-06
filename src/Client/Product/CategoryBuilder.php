@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client\Product;
+namespace GlobyApp\Zettle\Client\Product;
 
 use DateTime;
-use LauLamanApps\IzettleApi\API\Product\Category;
-use LauLamanApps\IzettleApi\API\Product\CategoryCollection;
+use GlobyApp\Zettle\API\Product\Category;
+use GlobyApp\Zettle\API\Product\CategoryCollection;
 use Psr\Http\Message\ResponseInterface;
 use Ramsey\Uuid\Uuid;
 

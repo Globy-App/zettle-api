@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client\Exception\InvalidGrant;
+namespace GlobyApp\Zettle\Client\Exception\InvalidGrant;
 
-use LauLamanApps\IzettleApi\Client\Exception\InvalidGrantException;
+use GlobyApp\Zettle\Client\Exception\InvalidGrantException;
 
 final class TooManyFailedAttemptsException extends InvalidGrantException
 {

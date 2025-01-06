@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi;
+namespace GlobyApp\Zettle;
 
-use LauLamanApps\IzettleApi\API\Universal\IzettlePostable;
-use LauLamanApps\IzettleApi\Client\AccessToken;
-use LauLamanApps\IzettleApi\Client\ApiScope;
-use LauLamanApps\IzettleApi\Exception\UnprocessableEntityException;
+use GlobyApp\Zettle\API\Universal\IzettlePostable;
+use GlobyApp\Zettle\Client\AccessToken;
+use GlobyApp\Zettle\Client\ApiScope;
+use GlobyApp\Zettle\Exception\UnprocessableEntityException;
 use Psr\Http\Message\ResponseInterface;
 
 interface IzettleClientInterface

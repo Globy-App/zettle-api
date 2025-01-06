@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client;
+namespace GlobyApp\Zettle\Client;
 
-use LauLamanApps\IzettleApi\API\Image;
-use LauLamanApps\IzettleApi\Client\Image\ImageUploadRequestInterface;
-use LauLamanApps\IzettleApi\Client\Universal\ImageBuilderInterface;
-use LauLamanApps\IzettleApi\IzettleClientInterface;
+use GlobyApp\Zettle\API\Image;
+use GlobyApp\Zettle\Client\Image\ImageUploadRequestInterface;
+use GlobyApp\Zettle\Client\Universal\ImageBuilderInterface;
+use GlobyApp\Zettle\IzettleClientInterface;
 use Ramsey\Uuid\UuidInterface;
 
 final class ImageClient

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Unit\Client;
+namespace GlobyApp\Zettle\Tests\Unit\Client;
 
 use DateTimeImmutable;
-use LauLamanApps\IzettleApi\Client\AccessToken;
+use GlobyApp\Zettle\Client\AccessToken;
 use PHPUnit\Framework\TestCase;
 
 /**

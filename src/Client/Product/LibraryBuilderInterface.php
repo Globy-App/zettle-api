@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client\Product;
+namespace GlobyApp\Zettle\Client\Product;
 
-use LauLamanApps\IzettleApi\API\Product\Library;
+use GlobyApp\Zettle\API\Product\Library;
 
 interface LibraryBuilderInterface
 {

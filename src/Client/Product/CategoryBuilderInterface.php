@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client\Product;
+namespace GlobyApp\Zettle\Client\Product;
 
-use LauLamanApps\IzettleApi\API\Product\Category;
-use LauLamanApps\IzettleApi\API\Product\CategoryCollection;
-use LauLamanApps\IzettleApi\Client\Universal\BuilderInterface;
+use GlobyApp\Zettle\API\Product\Category;
+use GlobyApp\Zettle\API\Product\CategoryCollection;
+use GlobyApp\Zettle\Client\Universal\BuilderInterface;
 
 interface CategoryBuilderInterface extends BuilderInterface
 {

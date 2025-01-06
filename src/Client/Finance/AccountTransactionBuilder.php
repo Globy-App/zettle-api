@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client\Finance;
+namespace GlobyApp\Zettle\Client\Finance;
 
 use DateTime;
-use LauLamanApps\IzettleApi\API\Finance\AccountTransaction;
-use LauLamanApps\IzettleApi\API\Finance\Enum\TransactionType;
+use GlobyApp\Zettle\API\Finance\AccountTransaction;
+use GlobyApp\Zettle\API\Finance\Enum\TransactionType;
 use Psr\Http\Message\ResponseInterface;
 use Ramsey\Uuid\Uuid;
 

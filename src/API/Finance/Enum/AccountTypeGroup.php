@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\API\Finance\Enum;
+namespace GlobyApp\Zettle\API\Finance\Enum;
 
 enum AccountTypeGroup: string
 {

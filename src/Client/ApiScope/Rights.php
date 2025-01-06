@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client\ApiScope;
+namespace GlobyApp\Zettle\Client\ApiScope;
 
 use Werkspot\Enum\AbstractEnum;
 

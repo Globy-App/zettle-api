@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Integration\Client;
+namespace GlobyApp\Zettle\Tests\Integration\Client;
 
 use DateTime;
-use LauLamanApps\IzettleApi\API\Purchase\AbstractPayment;
-use LauLamanApps\IzettleApi\API\Purchase\Payment\CardPayment;
-use LauLamanApps\IzettleApi\API\Purchase\Payment\CashPayment;
-use LauLamanApps\IzettleApi\API\Purchase\Product;
-use LauLamanApps\IzettleApi\API\Purchase\Purchase;
-use LauLamanApps\IzettleApi\API\Purchase\PurchaseHistory;
-use LauLamanApps\IzettleApi\Client\Purchase\Exception\PurchaseNotFoundException;
-use LauLamanApps\IzettleApi\IzettleClientFactory;
+use GlobyApp\Zettle\API\Purchase\AbstractPayment;
+use GlobyApp\Zettle\API\Purchase\Payment\CardPayment;
+use GlobyApp\Zettle\API\Purchase\Payment\CashPayment;
+use GlobyApp\Zettle\API\Purchase\Product;
+use GlobyApp\Zettle\API\Purchase\Purchase;
+use GlobyApp\Zettle\API\Purchase\PurchaseHistory;
+use GlobyApp\Zettle\Client\Purchase\Exception\PurchaseNotFoundException;
+use GlobyApp\Zettle\IzettleClientFactory;
 use Ramsey\Uuid\Uuid;
 
 /**

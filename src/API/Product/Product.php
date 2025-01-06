@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\API\Product;
+namespace GlobyApp\Zettle\API\Product;
 
 use DateTime;
-use LauLamanApps\IzettleApi\API\ImageCollection;
-use LauLamanApps\IzettleApi\API\Universal\IzettlePostable;
-use LauLamanApps\IzettleApi\Client\Exception\CantCreateProductException;
+use GlobyApp\Zettle\API\ImageCollection;
+use GlobyApp\Zettle\API\Universal\IzettlePostable;
+use GlobyApp\Zettle\Client\Exception\CantCreateProductException;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 

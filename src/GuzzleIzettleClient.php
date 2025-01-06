@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi;
+namespace GlobyApp\Zettle;
 
 use DateTime;
 use DateTimeImmutable;
+use GlobyApp\Zettle\API\Universal\IzettlePostable;
+use GlobyApp\Zettle\Client\AccessToken;
+use GlobyApp\Zettle\Client\ApiScope;
+use GlobyApp\Zettle\Client\Exception\AccessTokenExpiredException;
+use GlobyApp\Zettle\Client\Exception\AccessTokenNotRefreshableException;
+use GlobyApp\Zettle\Client\Exception\GuzzleClientExceptionHandler;
+use GlobyApp\Zettle\Exception\UnprocessableEntityException;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\RequestException;
-use LauLamanApps\IzettleApi\API\Universal\IzettlePostable;
-use LauLamanApps\IzettleApi\Client\AccessToken;
-use LauLamanApps\IzettleApi\Client\ApiScope;
-use LauLamanApps\IzettleApi\Client\Exception\AccessTokenExpiredException;
-use LauLamanApps\IzettleApi\Client\Exception\AccessTokenNotRefreshableException;
-use LauLamanApps\IzettleApi\Client\Exception\GuzzleClientExceptionHandler;
-use LauLamanApps\IzettleApi\Exception\UnprocessableEntityException;
 use Psr\Http\Message\ResponseInterface;
 
 class GuzzleIzettleClient implements IzettleClientInterface

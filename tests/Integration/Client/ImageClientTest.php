@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Integration\Client;
+namespace GlobyApp\Zettle\Tests\Integration\Client;
 
-use LauLamanApps\IzettleApi\API\Image;
-use LauLamanApps\IzettleApi\Client\Image\ImageUrlUpload;
-use LauLamanApps\IzettleApi\IzettleClientFactory;
+use GlobyApp\Zettle\API\Image;
+use GlobyApp\Zettle\Client\Image\ImageUrlUpload;
+use GlobyApp\Zettle\IzettleClientFactory;
 
 /**
  * @medium

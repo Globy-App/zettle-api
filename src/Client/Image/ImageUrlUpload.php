@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client\Image;
+namespace GlobyApp\Zettle\Client\Image;
 
 final class ImageUrlUpload implements ImageUploadRequestInterface
 {

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Unit\Client\Finance;
+namespace GlobyApp\Zettle\Tests\Unit\Client\Finance;
 
-use LauLamanApps\IzettleApi\Client\Finance\PayoutInfoBuilder;
+use GlobyApp\Zettle\Client\Finance\PayoutInfoBuilder;
 use PHPUnit\Framework\TestCase;
 
 /**

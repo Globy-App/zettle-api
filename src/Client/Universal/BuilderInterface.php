@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client\Universal;
+namespace GlobyApp\Zettle\Client\Universal;
 
 interface BuilderInterface
 {

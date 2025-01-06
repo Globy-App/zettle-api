@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Unit\Client\Purchase;
+namespace GlobyApp\Zettle\Tests\Unit\Client\Purchase;
 
-use LauLamanApps\IzettleApi\API\Image;
-use LauLamanApps\IzettleApi\API\Purchase\Product;
-use LauLamanApps\IzettleApi\Client\Purchase\ProductBuilder;
+use GlobyApp\Zettle\API\Image;
+use GlobyApp\Zettle\API\Purchase\Product;
+use GlobyApp\Zettle\Client\Purchase\ProductBuilder;
 use Money\Currency;
 use PHPUnit\Framework\TestCase;
 

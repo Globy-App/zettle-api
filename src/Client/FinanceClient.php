@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client;
+namespace GlobyApp\Zettle\Client;
 
 use DateTime;
-use LauLamanApps\IzettleApi\API\Finance\AccountTransaction;
-use LauLamanApps\IzettleApi\API\Finance\Enum\AccountTypeGroup;
-use LauLamanApps\IzettleApi\API\Finance\PayoutInfo;
-use LauLamanApps\IzettleApi\Client\Finance\AccountTransactionBuilderInterface;
-use LauLamanApps\IzettleApi\Client\Finance\AccountTransactionParser;
-use LauLamanApps\IzettleApi\Client\Finance\PayoutInfoBuilderInterface;
-use LauLamanApps\IzettleApi\Client\Finance\PayoutInfoParser;
-use LauLamanApps\IzettleApi\IzettleClientInterface;
+use GlobyApp\Zettle\API\Finance\AccountTransaction;
+use GlobyApp\Zettle\API\Finance\Enum\AccountTypeGroup;
+use GlobyApp\Zettle\API\Finance\PayoutInfo;
+use GlobyApp\Zettle\Client\Finance\AccountTransactionBuilderInterface;
+use GlobyApp\Zettle\Client\Finance\AccountTransactionParser;
+use GlobyApp\Zettle\Client\Finance\PayoutInfoBuilderInterface;
+use GlobyApp\Zettle\Client\Finance\PayoutInfoParser;
+use GlobyApp\Zettle\IzettleClientInterface;
 use Money\Currency;
 use Money\Money;
 use Ramsey\Uuid\UuidInterface;

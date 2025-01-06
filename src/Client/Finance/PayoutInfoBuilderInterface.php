@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client\Finance;
+namespace GlobyApp\Zettle\Client\Finance;
 
-use LauLamanApps\IzettleApi\API\Finance\PayoutInfo;
+use GlobyApp\Zettle\API\Finance\PayoutInfo;
 
 interface PayoutInfoBuilderInterface
 {

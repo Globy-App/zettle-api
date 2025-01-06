@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Unit\Client\Image;
+namespace GlobyApp\Zettle\Tests\Unit\Client\Image;
 
-use LauLamanApps\IzettleApi\Client\Image\Exceptions\FileIsNotAnImageException;
-use LauLamanApps\IzettleApi\Client\Image\Exceptions\ImageIsToSmallException;
-use LauLamanApps\IzettleApi\Client\Image\Exceptions\ImageTypeNotAllowedException;
-use LauLamanApps\IzettleApi\Client\Image\Exceptions\MaximumImageFileSizeExcededException;
-use LauLamanApps\IzettleApi\Client\Image\ImageFileUpload;
+use GlobyApp\Zettle\Client\Image\Exceptions\FileIsNotAnImageException;
+use GlobyApp\Zettle\Client\Image\Exceptions\ImageIsToSmallException;
+use GlobyApp\Zettle\Client\Image\Exceptions\ImageTypeNotAllowedException;
+use GlobyApp\Zettle\Client\Image\Exceptions\MaximumImageFileSizeExcededException;
+use GlobyApp\Zettle\Client\Image\ImageFileUpload;
 use PHPUnit\Framework\TestCase;
 
 /**

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Unit\Client\Universal;
+namespace GlobyApp\Zettle\Tests\Unit\Client\Universal;
 
-use LauLamanApps\IzettleApi\API\Image;
-use LauLamanApps\IzettleApi\API\ImageCollection;
-use LauLamanApps\IzettleApi\Client\Universal\ImageBuilder;
+use GlobyApp\Zettle\API\Image;
+use GlobyApp\Zettle\API\ImageCollection;
+use GlobyApp\Zettle\Client\Universal\ImageBuilder;
 use PHPUnit\Framework\TestCase;
 
 /**

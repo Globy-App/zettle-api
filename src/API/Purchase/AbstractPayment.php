@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\API\Purchase;
+namespace GlobyApp\Zettle\API\Purchase;
 
 use Money\Money;
 use Ramsey\Uuid\UuidInterface;

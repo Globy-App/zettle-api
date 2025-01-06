@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client\Image;
+namespace GlobyApp\Zettle\Client\Image;
 
-use LauLamanApps\IzettleApi\API\Universal\IzettlePostable;
+use GlobyApp\Zettle\API\Universal\IzettlePostable;
 
 interface ImageUploadRequestInterface extends IzettlePostable
 {

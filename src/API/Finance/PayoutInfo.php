@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\API\Finance;
+namespace GlobyApp\Zettle\API\Finance;
 
-use LauLamanApps\IzettleApi\API\Finance\Enum\Periodicity;
+use GlobyApp\Zettle\API\Finance\Enum\Periodicity;
 use Money\Money;
 
 final class PayoutInfo

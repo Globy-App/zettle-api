@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client;
+namespace GlobyApp\Zettle\Client;
 
-use LauLamanApps\IzettleApi\API\Purchase\Purchase;
-use LauLamanApps\IzettleApi\API\Purchase\PurchaseHistory;
-use LauLamanApps\IzettleApi\Client\Exception\NotFoundException;
-use LauLamanApps\IzettleApi\Client\Purchase\Exception\PurchaseNotFoundException;
-use LauLamanApps\IzettleApi\Client\Purchase\PurchaseBuilderInterface;
-use LauLamanApps\IzettleApi\Client\Purchase\PurchaseHistoryBuilderInterface;
-use LauLamanApps\IzettleApi\IzettleClientInterface;
+use GlobyApp\Zettle\API\Purchase\Purchase;
+use GlobyApp\Zettle\API\Purchase\PurchaseHistory;
+use GlobyApp\Zettle\Client\Exception\NotFoundException;
+use GlobyApp\Zettle\Client\Purchase\Exception\PurchaseNotFoundException;
+use GlobyApp\Zettle\Client\Purchase\PurchaseBuilderInterface;
+use GlobyApp\Zettle\Client\Purchase\PurchaseHistoryBuilderInterface;
+use GlobyApp\Zettle\IzettleClientInterface;
 use Ramsey\Uuid\UuidInterface;
 
 final class PurchaseClient

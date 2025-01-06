@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client\Product;
+namespace GlobyApp\Zettle\Client\Product;
 
 use DateTime;
-use LauLamanApps\IzettleApi\API\Product\Product;
-use LauLamanApps\IzettleApi\API\Product\ProductCollection;
-use LauLamanApps\IzettleApi\Client\Universal\ImageBuilderInterface;
+use GlobyApp\Zettle\API\Product\Product;
+use GlobyApp\Zettle\API\Product\ProductCollection;
+use GlobyApp\Zettle\Client\Universal\ImageBuilderInterface;
 use Ramsey\Uuid\Uuid;
 
 final class ProductBuilder implements ProductBuilderInterface

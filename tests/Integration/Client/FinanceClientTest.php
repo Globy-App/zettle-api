@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Integration\Client;
+namespace GlobyApp\Zettle\Tests\Integration\Client;
 
 use DateTime;
-use LauLamanApps\IzettleApi\API\Finance\Enum\AccountTypeGroup;
-use LauLamanApps\IzettleApi\IzettleClientFactory;
+use GlobyApp\Zettle\API\Finance\Enum\AccountTypeGroup;
+use GlobyApp\Zettle\IzettleClientFactory;
 
 /**
  * @medium

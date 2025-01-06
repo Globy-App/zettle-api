@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Integration\Client;
+namespace GlobyApp\Zettle\Tests\Integration\Client;
 
 use DateTime;
-use LauLamanApps\IzettleApi\API\ImageCollection;
-use LauLamanApps\IzettleApi\API\Product\Category;
-use LauLamanApps\IzettleApi\API\Product\Discount;
-use LauLamanApps\IzettleApi\IzettleClientFactory;
+use GlobyApp\Zettle\API\ImageCollection;
+use GlobyApp\Zettle\API\Product\Category;
+use GlobyApp\Zettle\API\Product\Discount;
+use GlobyApp\Zettle\IzettleClientFactory;
 
 /**
  * @medium

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Integration;
+namespace GlobyApp\Zettle\Tests\Integration;
 
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Exception\ClientException;
@@ -10,8 +10,8 @@ use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
-use LauLamanApps\IzettleApi\Client\Exception\InvalidGrant\InvalidUsernameOrPasswordException;
-use LauLamanApps\IzettleApi\GuzzleIzettleClient;
+use GlobyApp\Zettle\Client\Exception\InvalidGrant\InvalidUsernameOrPasswordException;
+use GlobyApp\Zettle\GuzzleIzettleClient;
 use PHPUnit\Framework\TestCase;
 
 /**

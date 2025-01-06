@@ -2,26 +2,26 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi;
+namespace GlobyApp\Zettle;
 
-use LauLamanApps\IzettleApi\Client\Finance\AccountTransactionBuilder;
-use LauLamanApps\IzettleApi\Client\Finance\PayoutInfoBuilder;
-use LauLamanApps\IzettleApi\Client\FinanceClient;
-use LauLamanApps\IzettleApi\Client\ImageClient;
-use LauLamanApps\IzettleApi\Client\Product\CategoryBuilder;
-use LauLamanApps\IzettleApi\Client\Product\DiscountBuilder;
-use LauLamanApps\IzettleApi\Client\Product\LibraryBuilder;
-use LauLamanApps\IzettleApi\Client\Product\ProductBuilder as ProductProductBuilder;
-use LauLamanApps\IzettleApi\Client\Product\VariantBuilder;
-use LauLamanApps\IzettleApi\Client\ProductClient;
-use LauLamanApps\IzettleApi\Client\Purchase\CoordinatesBuilder;
-use LauLamanApps\IzettleApi\Client\Purchase\PaymentBuilder;
-use LauLamanApps\IzettleApi\Client\Purchase\ProductBuilder as PurchaseProductBuilder;
-use LauLamanApps\IzettleApi\Client\Purchase\PurchaseBuilder;
-use LauLamanApps\IzettleApi\Client\Purchase\PurchaseHistoryBuilder;
-use LauLamanApps\IzettleApi\Client\Purchase\VatBuilder;
-use LauLamanApps\IzettleApi\Client\PurchaseClient;
-use LauLamanApps\IzettleApi\Client\Universal\ImageBuilder;
+use GlobyApp\Zettle\Client\Finance\AccountTransactionBuilder;
+use GlobyApp\Zettle\Client\Finance\PayoutInfoBuilder;
+use GlobyApp\Zettle\Client\FinanceClient;
+use GlobyApp\Zettle\Client\ImageClient;
+use GlobyApp\Zettle\Client\Product\CategoryBuilder;
+use GlobyApp\Zettle\Client\Product\DiscountBuilder;
+use GlobyApp\Zettle\Client\Product\LibraryBuilder;
+use GlobyApp\Zettle\Client\Product\ProductBuilder as ProductProductBuilder;
+use GlobyApp\Zettle\Client\Product\VariantBuilder;
+use GlobyApp\Zettle\Client\ProductClient;
+use GlobyApp\Zettle\Client\Purchase\CoordinatesBuilder;
+use GlobyApp\Zettle\Client\Purchase\PaymentBuilder;
+use GlobyApp\Zettle\Client\Purchase\ProductBuilder as PurchaseProductBuilder;
+use GlobyApp\Zettle\Client\Purchase\PurchaseBuilder;
+use GlobyApp\Zettle\Client\Purchase\PurchaseHistoryBuilder;
+use GlobyApp\Zettle\Client\Purchase\VatBuilder;
+use GlobyApp\Zettle\Client\PurchaseClient;
+use GlobyApp\Zettle\Client\Universal\ImageBuilder;
 use Ramsey\Uuid\UuidInterface;
 
 final class IzettleClientFactory

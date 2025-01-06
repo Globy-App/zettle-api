@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client\Purchase;
+namespace GlobyApp\Zettle\Client\Purchase;
 
-use LauLamanApps\IzettleApi\API\Purchase\AbstractPayment;
+use GlobyApp\Zettle\API\Purchase\AbstractPayment;
 use Money\Currency;
 
 interface PaymentBuilderInterface

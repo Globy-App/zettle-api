@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Unit\Api\Product;
+namespace GlobyApp\Zettle\Tests\Unit\Api\Product;
 
-use LauLamanApps\IzettleApi\API\ImageCollection;
-use LauLamanApps\IzettleApi\API\Product\Category;
-use LauLamanApps\IzettleApi\API\Product\CategoryCollection;
-use LauLamanApps\IzettleApi\API\Product\Product;
-use LauLamanApps\IzettleApi\API\Product\Variant;
-use LauLamanApps\IzettleApi\API\Product\VariantCollection;
-use LauLamanApps\IzettleApi\Client\Exception\CantCreateProductException;
+use GlobyApp\Zettle\API\ImageCollection;
+use GlobyApp\Zettle\API\Product\Category;
+use GlobyApp\Zettle\API\Product\CategoryCollection;
+use GlobyApp\Zettle\API\Product\Product;
+use GlobyApp\Zettle\API\Product\Variant;
+use GlobyApp\Zettle\API\Product\VariantCollection;
+use GlobyApp\Zettle\Client\Exception\CantCreateProductException;
 use Money\Money;
 use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Uuid;

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Unit\Client;
+namespace GlobyApp\Zettle\Tests\Unit\Client;
 
-use LauLamanApps\IzettleApi\IzettleClientInterface;
-use LauLamanApps\IzettleApi\Tests\Unit\MockeryAssertionTrait;
+use GlobyApp\Zettle\IzettleClientInterface;
+use GlobyApp\Zettle\Tests\Unit\MockeryAssertionTrait;
 use Mockery;
 use Mockery\MockInterface;
 use PHPUnit\Framework\TestCase;

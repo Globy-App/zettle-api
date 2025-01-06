@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Unit\Api\Purchase\Payment;
+namespace GlobyApp\Zettle\Tests\Unit\Api\Purchase\Payment;
 
-use LauLamanApps\IzettleApi\API\Purchase\Payment\CashPayment;
+use GlobyApp\Zettle\API\Purchase\Payment\CashPayment;
 use Money\Money;
 use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Uuid;

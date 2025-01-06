@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client\Image;
+namespace GlobyApp\Zettle\Client\Image;
 
 use Exception;
-use LauLamanApps\IzettleApi\Client\Image\Exceptions\FileIsNotAnImageException;
-use LauLamanApps\IzettleApi\Client\Image\Exceptions\ImageIsToSmallException;
-use LauLamanApps\IzettleApi\Client\Image\Exceptions\ImageTypeNotAllowedException;
-use LauLamanApps\IzettleApi\Client\Image\Exceptions\MaximumImageFileSizeExcededException;
+use GlobyApp\Zettle\Client\Image\Exceptions\FileIsNotAnImageException;
+use GlobyApp\Zettle\Client\Image\Exceptions\ImageIsToSmallException;
+use GlobyApp\Zettle\Client\Image\Exceptions\ImageTypeNotAllowedException;
+use GlobyApp\Zettle\Client\Image\Exceptions\MaximumImageFileSizeExcededException;
 
 final class ImageFileUpload implements ImageUploadRequestInterface
 {

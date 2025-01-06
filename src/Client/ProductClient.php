@@ -2,22 +2,22 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client;
+namespace GlobyApp\Zettle\Client;
 
-use LauLamanApps\IzettleApi\API\Product\Category;
-use LauLamanApps\IzettleApi\API\Product\Discount;
-use LauLamanApps\IzettleApi\API\Product\Library;
-use LauLamanApps\IzettleApi\API\Product\Product;
-use LauLamanApps\IzettleApi\Client\Product\CategoryBuilder;
-use LauLamanApps\IzettleApi\Client\Product\CategoryBuilderInterface;
-use LauLamanApps\IzettleApi\Client\Product\DiscountBuilder;
-use LauLamanApps\IzettleApi\Client\Product\DiscountBuilderInterface;
-use LauLamanApps\IzettleApi\Client\Product\LibraryBuilder;
-use LauLamanApps\IzettleApi\Client\Product\LibraryBuilderInterface;
-use LauLamanApps\IzettleApi\Client\Product\ProductBuilder;
-use LauLamanApps\IzettleApi\Client\Product\ProductBuilderInterface;
-use LauLamanApps\IzettleApi\Exception\UnprocessableEntityException;
-use LauLamanApps\IzettleApi\IzettleClientInterface;
+use GlobyApp\Zettle\API\Product\Category;
+use GlobyApp\Zettle\API\Product\Discount;
+use GlobyApp\Zettle\API\Product\Library;
+use GlobyApp\Zettle\API\Product\Product;
+use GlobyApp\Zettle\Client\Product\CategoryBuilder;
+use GlobyApp\Zettle\Client\Product\CategoryBuilderInterface;
+use GlobyApp\Zettle\Client\Product\DiscountBuilder;
+use GlobyApp\Zettle\Client\Product\DiscountBuilderInterface;
+use GlobyApp\Zettle\Client\Product\LibraryBuilder;
+use GlobyApp\Zettle\Client\Product\LibraryBuilderInterface;
+use GlobyApp\Zettle\Client\Product\ProductBuilder;
+use GlobyApp\Zettle\Client\Product\ProductBuilderInterface;
+use GlobyApp\Zettle\Exception\UnprocessableEntityException;
+use GlobyApp\Zettle\IzettleClientInterface;
 use Ramsey\Uuid\UuidInterface;
 
 final class ProductClient

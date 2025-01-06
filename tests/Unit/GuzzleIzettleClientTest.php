@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Unit;
+namespace GlobyApp\Zettle\Tests\Unit;
 
 use DateTime;
 use DateTimeImmutable;
@@ -11,12 +11,12 @@ use GuzzleHttp\ClientInterface as GuzzleClientInterface;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-use LauLamanApps\IzettleApi\API\Universal\IzettlePostable;
-use LauLamanApps\IzettleApi\Client\AccessToken;
-use LauLamanApps\IzettleApi\Client\ApiScope;
-use LauLamanApps\IzettleApi\Client\Exception\AccessTokenExpiredException;
-use LauLamanApps\IzettleApi\Client\Exception\AccessTokenNotRefreshableException;
-use LauLamanApps\IzettleApi\GuzzleIzettleClient;
+use GlobyApp\Zettle\API\Universal\IzettlePostable;
+use GlobyApp\Zettle\Client\AccessToken;
+use GlobyApp\Zettle\Client\ApiScope;
+use GlobyApp\Zettle\Client\Exception\AccessTokenExpiredException;
+use GlobyApp\Zettle\Client\Exception\AccessTokenNotRefreshableException;
+use GlobyApp\Zettle\GuzzleIzettleClient;
 use Mockery;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;

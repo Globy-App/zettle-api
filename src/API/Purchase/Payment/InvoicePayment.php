@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\API\Purchase\Payment;
+namespace GlobyApp\Zettle\API\Purchase\Payment;
 
 use DateTime;
-use LauLamanApps\IzettleApi\API\Purchase\AbstractPayment;
+use GlobyApp\Zettle\API\Purchase\AbstractPayment;
 use Money\Money;
 use Ramsey\Uuid\UuidInterface;
 

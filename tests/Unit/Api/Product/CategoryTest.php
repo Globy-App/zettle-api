@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Unit\Api\Product;
+namespace GlobyApp\Zettle\Tests\Unit\Api\Product;
 
-use LauLamanApps\IzettleApi\API\Product\Category;
+use GlobyApp\Zettle\API\Product\Category;
 use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Uuid;
 

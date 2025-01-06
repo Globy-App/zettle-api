@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client\Finance;
+namespace GlobyApp\Zettle\Client\Finance;
 
-use LauLamanApps\IzettleApi\API\Finance\Enum\Periodicity;
-use LauLamanApps\IzettleApi\API\Finance\PayoutInfo;
+use GlobyApp\Zettle\API\Finance\Enum\Periodicity;
+use GlobyApp\Zettle\API\Finance\PayoutInfo;
 use Money\Currency;
 use Money\Money;
 use Psr\Http\Message\ResponseInterface;

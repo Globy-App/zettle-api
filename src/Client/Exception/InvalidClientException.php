@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client\Exception;
+namespace GlobyApp\Zettle\Client\Exception;
 
 class InvalidClientException extends ClientException
 {

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client\Purchase;
+namespace GlobyApp\Zettle\Client\Purchase;
 
-use LauLamanApps\IzettleApi\API\Purchase\PurchaseHistory;
+use GlobyApp\Zettle\API\Purchase\PurchaseHistory;
 
 interface PurchaseHistoryBuilderInterface
 {

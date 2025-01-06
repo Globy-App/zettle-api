@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Unit\Client\Image;
+namespace GlobyApp\Zettle\Tests\Unit\Client\Image;
 
-use LauLamanApps\IzettleApi\Client\Image\ImageUrlUpload;
+use GlobyApp\Zettle\Client\Image\ImageUrlUpload;
 use PHPUnit\Framework\TestCase;
 
 /**

@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Unit\Client\Exception;
+namespace GlobyApp\Zettle\Tests\Unit\Client\Exception;
 
 use GuzzleHttp\Exception\ClientException as GuzzleClientException;
 use GuzzleHttp\Exception\RequestException as GuzzleRequestException;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
-use LauLamanApps\IzettleApi\Client\Exception\ClientException;
-use LauLamanApps\IzettleApi\Client\Exception\GuzzleClientExceptionHandler;
-use LauLamanApps\IzettleApi\Client\Exception\InvalidClient\InvalidClientIdException;
-use LauLamanApps\IzettleApi\Client\Exception\InvalidClientException;
-use LauLamanApps\IzettleApi\Client\Exception\InvalidGrant\InvalidUsernameOrPasswordException;
-use LauLamanApps\IzettleApi\Client\Exception\InvalidGrant\TooManyFailedAttemptsException;
-use LauLamanApps\IzettleApi\Client\Exception\InvalidGrantException;
-use LauLamanApps\IzettleApi\Client\Exception\NotFoundException;
-use LauLamanApps\IzettleApi\Tests\Unit\MockeryAssertionTrait;
+use GlobyApp\Zettle\Client\Exception\ClientException;
+use GlobyApp\Zettle\Client\Exception\GuzzleClientExceptionHandler;
+use GlobyApp\Zettle\Client\Exception\InvalidClient\InvalidClientIdException;
+use GlobyApp\Zettle\Client\Exception\InvalidClientException;
+use GlobyApp\Zettle\Client\Exception\InvalidGrant\InvalidUsernameOrPasswordException;
+use GlobyApp\Zettle\Client\Exception\InvalidGrant\TooManyFailedAttemptsException;
+use GlobyApp\Zettle\Client\Exception\InvalidGrantException;
+use GlobyApp\Zettle\Client\Exception\NotFoundException;
+use GlobyApp\Zettle\Tests\Unit\MockeryAssertionTrait;
 use Mockery;
 use Mockery\MockInterface;
 use PHPUnit\Framework\TestCase;

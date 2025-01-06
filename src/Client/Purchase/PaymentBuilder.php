@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client\Purchase;
+namespace GlobyApp\Zettle\Client\Purchase;
 
 use DateTime;
-use LauLamanApps\IzettleApi\API\Purchase\AbstractPayment;
-use LauLamanApps\IzettleApi\API\Purchase\Payment\CardPayment;
-use LauLamanApps\IzettleApi\API\Purchase\Payment\CashPayment;
-use LauLamanApps\IzettleApi\API\Purchase\Payment\InvoicePayment;
-use LauLamanApps\IzettleApi\API\Purchase\Payment\MobilePayment;
-use LauLamanApps\IzettleApi\API\Purchase\Payment\SwishPayment;
-use LauLamanApps\IzettleApi\API\Purchase\Payment\VippsPayment;
-use LauLamanApps\IzettleApi\Client\Purchase\Exception\PaymentTypeNotConfiguredException;
+use GlobyApp\Zettle\API\Purchase\AbstractPayment;
+use GlobyApp\Zettle\API\Purchase\Payment\CardPayment;
+use GlobyApp\Zettle\API\Purchase\Payment\CashPayment;
+use GlobyApp\Zettle\API\Purchase\Payment\InvoicePayment;
+use GlobyApp\Zettle\API\Purchase\Payment\MobilePayment;
+use GlobyApp\Zettle\API\Purchase\Payment\SwishPayment;
+use GlobyApp\Zettle\API\Purchase\Payment\VippsPayment;
+use GlobyApp\Zettle\Client\Purchase\Exception\PaymentTypeNotConfiguredException;
 use Money\Currency;
 use Money\Money;
 use Ramsey\Uuid\Uuid;

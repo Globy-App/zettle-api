@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Unit\Client\Product;
+namespace GlobyApp\Zettle\Tests\Unit\Client\Product;
 
 use DateTime;
-use LauLamanApps\IzettleApi\API\Product\Category;
-use LauLamanApps\IzettleApi\API\Product\CategoryCollection;
-use LauLamanApps\IzettleApi\Client\Product\CategoryBuilder;
+use GlobyApp\Zettle\API\Product\Category;
+use GlobyApp\Zettle\API\Product\CategoryCollection;
+use GlobyApp\Zettle\Client\Product\CategoryBuilder;
 use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Uuid;
 

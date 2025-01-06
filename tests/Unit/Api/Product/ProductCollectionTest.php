@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Unit\Api\Product;
+namespace GlobyApp\Zettle\Tests\Unit\Api\Product;
 
-use LauLamanApps\IzettleApi\API\ImageCollection;
-use LauLamanApps\IzettleApi\API\Product\CategoryCollection;
-use LauLamanApps\IzettleApi\API\Product\Product;
-use LauLamanApps\IzettleApi\API\Product\ProductCollection;
-use LauLamanApps\IzettleApi\API\Product\VariantCollection;
+use GlobyApp\Zettle\API\ImageCollection;
+use GlobyApp\Zettle\API\Product\CategoryCollection;
+use GlobyApp\Zettle\API\Product\Product;
+use GlobyApp\Zettle\API\Product\ProductCollection;
+use GlobyApp\Zettle\API\Product\VariantCollection;
 use PHPUnit\Framework\TestCase;
 
 /**

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client;
+namespace GlobyApp\Zettle\Client;
 
-use LauLamanApps\IzettleApi\Client\ApiScope\Rights;
+use GlobyApp\Zettle\Client\ApiScope\Rights;
 
 final class ApiScope
 {

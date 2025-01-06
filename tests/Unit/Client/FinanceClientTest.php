@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Unit\Client;
+namespace GlobyApp\Zettle\Tests\Unit\Client;
 
 use DateTime;
-use LauLamanApps\IzettleApi\API\Finance\Enum\AccountTypeGroup;
-use LauLamanApps\IzettleApi\API\Finance\Enum\Periodicity;
-use LauLamanApps\IzettleApi\API\Finance\PayoutInfo;
-use LauLamanApps\IzettleApi\Client\Finance\AccountTransactionBuilderInterface;
-use LauLamanApps\IzettleApi\Client\Finance\PayoutInfoBuilderInterface;
-use LauLamanApps\IzettleApi\Client\FinanceClient;
+use GlobyApp\Zettle\API\Finance\Enum\AccountTypeGroup;
+use GlobyApp\Zettle\API\Finance\Enum\Periodicity;
+use GlobyApp\Zettle\API\Finance\PayoutInfo;
+use GlobyApp\Zettle\Client\Finance\AccountTransactionBuilderInterface;
+use GlobyApp\Zettle\Client\Finance\PayoutInfoBuilderInterface;
+use GlobyApp\Zettle\Client\FinanceClient;
 use Mockery;
 use Mockery\MockInterface;
 use Money\Money;

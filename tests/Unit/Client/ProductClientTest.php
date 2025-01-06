@@ -2,25 +2,25 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Unit\Client;
+namespace GlobyApp\Zettle\Tests\Unit\Client;
 
-use LauLamanApps\IzettleApi\API\ImageCollection;
-use LauLamanApps\IzettleApi\API\Product\Category;
-use LauLamanApps\IzettleApi\API\Product\CategoryCollection;
-use LauLamanApps\IzettleApi\API\Product\Discount;
-use LauLamanApps\IzettleApi\API\Product\DiscountCollection;
-use LauLamanApps\IzettleApi\API\Product\Library;
-use LauLamanApps\IzettleApi\API\Product\Product;
-use LauLamanApps\IzettleApi\API\Product\ProductCollection;
-use LauLamanApps\IzettleApi\API\Product\Variant;
-use LauLamanApps\IzettleApi\API\Product\VariantCollection;
-use LauLamanApps\IzettleApi\Client\Product\CategoryBuilderInterface;
-use LauLamanApps\IzettleApi\Client\Product\DiscountBuilderInterface;
-use LauLamanApps\IzettleApi\Client\Product\LibraryBuilderInterface;
-use LauLamanApps\IzettleApi\Client\Product\ProductBuilderInterface;
-use LauLamanApps\IzettleApi\Client\ProductClient;
-use LauLamanApps\IzettleApi\IzettleClientInterface;
-use LauLamanApps\IzettleApi\Tests\Unit\MockeryAssertionTrait;
+use GlobyApp\Zettle\API\ImageCollection;
+use GlobyApp\Zettle\API\Product\Category;
+use GlobyApp\Zettle\API\Product\CategoryCollection;
+use GlobyApp\Zettle\API\Product\Discount;
+use GlobyApp\Zettle\API\Product\DiscountCollection;
+use GlobyApp\Zettle\API\Product\Library;
+use GlobyApp\Zettle\API\Product\Product;
+use GlobyApp\Zettle\API\Product\ProductCollection;
+use GlobyApp\Zettle\API\Product\Variant;
+use GlobyApp\Zettle\API\Product\VariantCollection;
+use GlobyApp\Zettle\Client\Product\CategoryBuilderInterface;
+use GlobyApp\Zettle\Client\Product\DiscountBuilderInterface;
+use GlobyApp\Zettle\Client\Product\LibraryBuilderInterface;
+use GlobyApp\Zettle\Client\Product\ProductBuilderInterface;
+use GlobyApp\Zettle\Client\ProductClient;
+use GlobyApp\Zettle\IzettleClientInterface;
+use GlobyApp\Zettle\Tests\Unit\MockeryAssertionTrait;
 use Mockery;
 use Money\Money;
 use PHPUnit\Framework\TestCase;

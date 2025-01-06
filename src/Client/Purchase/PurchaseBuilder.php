@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client\Purchase;
+namespace GlobyApp\Zettle\Client\Purchase;
 
 use DateTime;
-use LauLamanApps\IzettleApi\API\Purchase\Coordinates;
-use LauLamanApps\IzettleApi\API\Purchase\Purchase;
-use LauLamanApps\IzettleApi\API\Purchase\PurchaseHistory;
-use LauLamanApps\IzettleApi\API\Purchase\User;
+use GlobyApp\Zettle\API\Purchase\Coordinates;
+use GlobyApp\Zettle\API\Purchase\Purchase;
+use GlobyApp\Zettle\API\Purchase\PurchaseHistory;
+use GlobyApp\Zettle\API\Purchase\User;
 use Money\Currency;
 use Money\Money;
 use Ramsey\Uuid\Uuid;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client\Image\Exceptions;
+namespace GlobyApp\Zettle\Client\Image\Exceptions;
 
 use Exception;
 

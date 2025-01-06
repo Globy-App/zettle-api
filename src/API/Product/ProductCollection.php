@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\API\Product;
+namespace GlobyApp\Zettle\API\Product;
 
 use Ramsey\Uuid\UuidInterface;
 

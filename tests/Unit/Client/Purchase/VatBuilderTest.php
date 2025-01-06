@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Unit\Client\Purchase;
+namespace GlobyApp\Zettle\Tests\Unit\Client\Purchase;
 
-use LauLamanApps\IzettleApi\Client\Purchase\VatBuilder;
+use GlobyApp\Zettle\Client\Purchase\VatBuilder;
 use Money\Currency;
 use PHPUnit\Framework\TestCase;
 

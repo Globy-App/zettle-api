@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Unit\Client\Product;
+namespace GlobyApp\Zettle\Tests\Unit\Client\Product;
 
 use DateTime;
-use LauLamanApps\IzettleApi\API\ImageCollection;
-use LauLamanApps\IzettleApi\API\Product\Discount;
-use LauLamanApps\IzettleApi\API\Product\DiscountCollection;
-use LauLamanApps\IzettleApi\Client\Product\DiscountBuilder;
-use LauLamanApps\IzettleApi\Client\Universal\ImageBuilderInterface;
+use GlobyApp\Zettle\API\ImageCollection;
+use GlobyApp\Zettle\API\Product\Discount;
+use GlobyApp\Zettle\API\Product\DiscountCollection;
+use GlobyApp\Zettle\Client\Product\DiscountBuilder;
+use GlobyApp\Zettle\Client\Universal\ImageBuilderInterface;
 use Mockery;
 use Money\Money;
 use PHPUnit\Framework\TestCase;

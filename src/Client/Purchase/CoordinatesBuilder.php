@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client\Purchase;
+namespace GlobyApp\Zettle\Client\Purchase;
 
-use LauLamanApps\IzettleApi\API\Purchase\Coordinates;
+use GlobyApp\Zettle\API\Purchase\Coordinates;
 
 final class CoordinatesBuilder implements CoordinatesBuilderInterface
 {

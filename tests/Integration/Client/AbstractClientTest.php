@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Integration\Client;
+namespace GlobyApp\Zettle\Tests\Integration\Client;
 
 use DateTimeImmutable;
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-use LauLamanApps\IzettleApi\Client\AccessToken;
-use LauLamanApps\IzettleApi\GuzzleIzettleClient;
+use GlobyApp\Zettle\Client\AccessToken;
+use GlobyApp\Zettle\GuzzleIzettleClient;
 use PHPUnit\Framework\TestCase;
 
 abstract class AbstractClientTest extends TestCase

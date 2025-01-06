@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\API\Product;
+namespace GlobyApp\Zettle\API\Product;
 
 use DateTime;
-use LauLamanApps\IzettleApi\API\Universal\IzettlePostable;
+use GlobyApp\Zettle\API\Universal\IzettlePostable;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 

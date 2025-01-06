@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Unit\Client\Purchase;
+namespace GlobyApp\Zettle\Tests\Unit\Client\Purchase;
 
-use LauLamanApps\IzettleApi\API\Purchase\PurchaseHistory;
-use LauLamanApps\IzettleApi\Client\Purchase\PurchaseBuilderInterface;
-use LauLamanApps\IzettleApi\Client\Purchase\PurchaseHistoryBuilder;
+use GlobyApp\Zettle\API\Purchase\PurchaseHistory;
+use GlobyApp\Zettle\Client\Purchase\PurchaseBuilderInterface;
+use GlobyApp\Zettle\Client\Purchase\PurchaseHistoryBuilder;
 use Mockery;
 use PHPUnit\Framework\TestCase;
 

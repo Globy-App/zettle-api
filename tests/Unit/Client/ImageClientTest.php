@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Unit\Client;
+namespace GlobyApp\Zettle\Tests\Unit\Client;
 
-use LauLamanApps\IzettleApi\API\Image;
-use LauLamanApps\IzettleApi\Client\Image\ImageFileUpload;
-use LauLamanApps\IzettleApi\Client\Image\ImageUrlUpload;
-use LauLamanApps\IzettleApi\Client\ImageClient;
-use LauLamanApps\IzettleApi\Client\Universal\ImageBuilderInterface;
+use GlobyApp\Zettle\API\Image;
+use GlobyApp\Zettle\Client\Image\ImageFileUpload;
+use GlobyApp\Zettle\Client\Image\ImageUrlUpload;
+use GlobyApp\Zettle\Client\ImageClient;
+use GlobyApp\Zettle\Client\Universal\ImageBuilderInterface;
 use Mockery;
 use Mockery\MockInterface;
 use Ramsey\Uuid\Uuid;

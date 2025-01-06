@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Unit\Client;
+namespace GlobyApp\Zettle\Tests\Unit\Client;
 
-use LauLamanApps\IzettleApi\Client\ApiScope;
-use LauLamanApps\IzettleApi\Client\ApiScope\Rights;
+use GlobyApp\Zettle\Client\ApiScope;
+use GlobyApp\Zettle\Client\ApiScope\Rights;
 use PHPUnit\Framework\TestCase;
 
 /**

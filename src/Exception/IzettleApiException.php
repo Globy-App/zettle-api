@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Exception;
+namespace GlobyApp\Zettle\Exception;
 
 interface IzettleApiException
 {

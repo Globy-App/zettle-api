@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Tests\Unit;
+namespace GlobyApp\Zettle\Tests\Unit;
 
 use Exception;
 use Mockery;

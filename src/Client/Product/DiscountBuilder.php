@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\IzettleApi\Client\Product;
+namespace GlobyApp\Zettle\Client\Product;
 
 use DateTime;
-use LauLamanApps\IzettleApi\API\Product\Discount;
-use LauLamanApps\IzettleApi\API\Product\DiscountCollection;
-use LauLamanApps\IzettleApi\Client\Universal\ImageBuilderInterface;
+use GlobyApp\Zettle\API\Product\Discount;
+use GlobyApp\Zettle\API\Product\DiscountCollection;
+use GlobyApp\Zettle\Client\Universal\ImageBuilderInterface;
 use Money\Currency;
 use Money\Money;
 use Ramsey\Uuid\Uuid;
