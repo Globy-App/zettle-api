@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace GlobyApp\Zettle;
 
 use GlobyApp\Zettle\API\Universal\IzettlePostable;
-use GlobyApp\Zettle\Client\AccessToken;
 use GlobyApp\Zettle\Client\ApiScope;
+use GlobyApp\Zettle\Data\AccessToken;
 use GlobyApp\Zettle\Exception\UnprocessableEntityException;
 use Psr\Http\Message\ResponseInterface;
 

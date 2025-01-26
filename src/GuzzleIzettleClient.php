@@ -4,23 +4,25 @@ declare(strict_types=1);
 
 namespace GlobyApp\Zettle;
 
-use DateTime;
-use DateTimeImmutable;
 use GlobyApp\Zettle\API\Universal\IzettlePostable;
-use GlobyApp\Zettle\Client\AccessToken;
 use GlobyApp\Zettle\Client\ApiScope;
 use GlobyApp\Zettle\Client\Exception\AccessTokenExpiredException;
 use GlobyApp\Zettle\Client\Exception\AccessTokenNotRefreshableException;
 use GlobyApp\Zettle\Client\Exception\GuzzleClientExceptionHandler;
+use GlobyApp\Zettle\Data\AccessToken;
 use GlobyApp\Zettle\Exception\UnprocessableEntityException;
+use GlobyApp\Zettle\Traits\DeserializerTrait;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
 use Psr\Http\Message\ResponseInterface;
 
 class GuzzleIzettleClient implements IzettleClientInterface
 {
+    use DeserializerTrait;
+
     /**
      * @var ClientInterface|Client
      */
@@ -66,17 +68,16 @@ class GuzzleIzettleClient implements IzettleClientInterface
         return $url;
     }
 
-
     public function getAccessTokenFromAuthorizedCode(string $redirectUrl, string $code): AccessToken
     {
         $options = [
-           'form_params' => [
-              'grant_type' => self::API_ACCESS_TOKEN_CODE_GRANT,
-              'client_id' => $this->clientId,
-              'client_secret' => $this->clientSecret,
-              'redirect_uri' => $redirectUrl,
-              'code' => $code,
-           ],
+            'form_params' => [
+                'grant_type' => self::API_ACCESS_TOKEN_CODE_GRANT,
+                'client_id' => $this->clientId,
+                'client_secret' => $this->clientSecret,
+                'redirect_uri' => $redirectUrl,
+                'code' => $code,
+            ],
         ];
 
         try {
@@ -109,6 +110,7 @@ class GuzzleIzettleClient implements IzettleClientInterface
         return $this->accessToken;
     }
 
+    // TODO: move this to an actual factory
     public function getAccessTokenFromApiTokenAssertion(string $assertion): AccessToken
     {
         $options = [
@@ -235,28 +237,22 @@ class GuzzleIzettleClient implements IzettleClientInterface
     private function validateAccessToken(): void
     {
         if ($this->accessToken->isExpired()) {
-            throw new AccessTokenExpiredException(
-                sprintf(
-                    'Access Token was valid till \'%s\' it\'s now \'%s\'',
-                    $this->accessToken->getExpires()->format('Y-m-d H:i:s.u'),
-                    (new DateTime())->format('Y-m-d H:i:s.u')
-                )
-            );
+            throw new AccessTokenExpiredException(sprintf('Access Token was valid till \'%s\' it\'s now \'%s\'', $this->accessToken->getExpiry()->format('Y-m-d H:i:s.u'), (new \DateTime())->format('Y-m-d H:i:s.u')));
         }
     }
 
+    /**
+     * @throws GuzzleException
+     */
     private function requestAccessToken($url, $options): AccessToken
     {
         $headers = ['headers' => ['Content-Type' => 'application/x-www-form-urlencoded']];
         $options = array_merge($headers, $options);
 
         $response = $this->guzzleClient->post($url, $options);
-        $data = json_decode($response->getBody()->getContents(), true);
+        var_dump($response->getBody()->getContents());
 
-        return new AccessToken(
-            $data['access_token'],
-            new DateTimeImmutable(sprintf('+%d second', $data['expires_in'])),
-            $data['refresh_token'] ?? null
-        );
+        // Deserialize the response from the zettle API to an AccessToken object
+        return $this->deserializeJson($response->getBody()->getContents(), AccessToken::class);
     }
 }

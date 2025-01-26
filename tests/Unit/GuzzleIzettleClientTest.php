@@ -6,17 +6,17 @@ namespace GlobyApp\Zettle\Tests\Unit;
 
 use DateTime;
 use DateTimeImmutable;
+use GlobyApp\Zettle\API\Universal\IzettlePostable;
+use GlobyApp\Zettle\Client\ApiScope;
+use GlobyApp\Zettle\Client\Exception\AccessTokenExpiredException;
+use GlobyApp\Zettle\Client\Exception\AccessTokenNotRefreshableException;
+use GlobyApp\Zettle\Data\AccessToken;
+use GlobyApp\Zettle\GuzzleIzettleClient;
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\ClientInterface as GuzzleClientInterface;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-use GlobyApp\Zettle\API\Universal\IzettlePostable;
-use GlobyApp\Zettle\Client\AccessToken;
-use GlobyApp\Zettle\Client\ApiScope;
-use GlobyApp\Zettle\Client\Exception\AccessTokenExpiredException;
-use GlobyApp\Zettle\Client\Exception\AccessTokenNotRefreshableException;
-use GlobyApp\Zettle\GuzzleIzettleClient;
 use Mockery;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
@@ -95,7 +95,7 @@ final class GuzzleIzettleClientTest extends TestCase
         $this->assertSame($refreshToken, $accessTokenObject->getRefreshToken());
         $this->assertEquals(
             (new DateTime($expiresIn . ' second'))->format('Y-m-d H:i:s'),
-            $accessTokenObject->getExpires()->format('Y-m-d H:i:s')
+            $accessTokenObject->getExpiresIn()->format('Y-m-d H:i:s')
         );
     }
 
@@ -136,7 +136,7 @@ final class GuzzleIzettleClientTest extends TestCase
         $this->assertNull($accessTokenObject->getRefreshToken());
         $this->assertEquals(
             (new DateTime($expiresIn . ' second'))->format('Y-m-d H:i:s'),
-            $accessTokenObject->getExpires()->format('Y-m-d H:i:s')
+            $accessTokenObject->getExpiresIn()->format('Y-m-d H:i:s')
         );
     }
 
@@ -180,7 +180,7 @@ final class GuzzleIzettleClientTest extends TestCase
         $this->assertSame($newRefreshToken, $accessTokenObject->getRefreshToken());
         $this->assertEquals(
             (new DateTime($newExpiresIn . ' second'))->format('Y-m-d H:i:s'),
-            $accessTokenObject->getExpires()->format('Y-m-d H:i:s')
+            $accessTokenObject->getExpiresIn()->format('Y-m-d H:i:s')
         );
 
         $fixedToken = new AccessToken('test', new DateTimeImmutable(), null);
@@ -336,7 +336,7 @@ final class GuzzleIzettleClientTest extends TestCase
      */
     public function validateAccessToken(): void
     {
-        $invalidAccessToken = new AccessToken('', new DateTimeImmutable('-1 day'), '');
+        $invalidAccessToken = new AccessToken('', -86400, '');
 
         $this->expectException(AccessTokenExpiredException::class);
         $izettleClient = new GuzzleIzettleClient(new GuzzleClient(), self::CLIENT_ID, self::CLIENT_SECRET);
@@ -345,6 +345,6 @@ final class GuzzleIzettleClientTest extends TestCase
 
     protected function getAccessToken(): AccessToken
     {
-        return new AccessToken(self::ACCESS_TOKEN, new DateTimeImmutable('+ 1 day'), '');
+        return new AccessToken(self::ACCESS_TOKEN, 86400, '');
     }
 }

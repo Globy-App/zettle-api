@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 use PhpCsFixer\Config;
 use PhpCsFixer\Finder;
 
 return (new Config())
     ->setRiskyAllowed(true)
     ->setRules([
+        '@Symfony' => true,
+        'array_push' => true,
         '@PSR12' => true,
         '@PHP81Migration' => true,
         '@PHP80Migration:risky' => true,
@@ -31,5 +35,4 @@ return (new Config())
             ->exclude('coverage')
             ->exclude('vendor')
             ->in(__DIR__)
-    )
-    ;
+    );
