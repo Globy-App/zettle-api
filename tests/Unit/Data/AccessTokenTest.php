@@ -16,7 +16,7 @@ final class AccessTokenTest extends TestCase
     use DeserializerTrait;
 
     /**
-     * @throws \DateMalformedStringException
+     * @throws \LogicException
      */
     public function testIsExpired(): void
     {
@@ -26,7 +26,7 @@ final class AccessTokenTest extends TestCase
     }
 
     /**
-     * @throws \DateMalformedStringException
+     * @throws \LogicException
      */
     public function testIsJustExpired(): void
     {
@@ -36,7 +36,7 @@ final class AccessTokenTest extends TestCase
     }
 
     /**
-     * @throws \DateMalformedStringException
+     * @throws \LogicException
      */
     public function testDeserialization(): void
     {

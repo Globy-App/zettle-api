@@ -23,25 +23,13 @@ class GuzzleIzettleClient implements IzettleClientInterface
 {
     use DeserializerTrait;
 
-    /**
-     * @var ClientInterface|Client
-     */
-    private $guzzleClient;
+    private ClientInterface|Client $guzzleClient;
 
-    /**
-     * @var string
-     */
-    private $clientId;
+    private string $clientId;
 
-    /**
-     * @var string
-     */
-    private $clientSecret;
+    private string $clientSecret;
 
-    /**
-     * @var AccessToken
-     */
-    private $accessToken;
+    private AccessToken $accessToken;
 
     public function __construct(ClientInterface $guzzleClient, string $clientId, string $clientSecret)
     {
@@ -50,10 +38,23 @@ class GuzzleIzettleClient implements IzettleClientInterface
         $this->clientSecret = $clientSecret;
     }
 
+    /**
+     * Tests whether the provided access token is valid and if so, sets it in the client. Otherwise, throws an exception.
+     *
+     * @param AccessToken $accessToken the access token to set in the client to use in future requests
+     *
+     * @throws AccessTokenExpiredException when the access token provided is expired
+     *
+     * @return void nothing, just sets the access token
+     */
     public function setAccessToken(AccessToken $accessToken): void
     {
+        // Before setting the access token in the client, validate that it isn't expired
+        if ($accessToken->isExpired()) {
+            throw new AccessTokenExpiredException(sprintf('Access Token was valid till \'%s\' it\'s now \'%s\'', $accessToken->getExpiry()->format('Y-m-d H:i:s.u'), (new \DateTime())->format('Y-m-d H:i:s.u')));
+        }
+
         $this->accessToken = $accessToken;
-        $this->validateAccessToken();
     }
 
     public function authoriseUserLogin(string $redirectUrl, ApiScope $apiScope): string
@@ -130,7 +131,13 @@ class GuzzleIzettleClient implements IzettleClientInterface
         return $this->accessToken;
     }
 
-    public function refreshAccessToken(?AccessToken $accessToken =  null): AccessToken
+    /**
+     * Function to request a new access token, validate it and set it in the client.
+     *
+     * @throws GuzzleException when something went wrong with the request access token request
+     * @throws AccessTokenExpiredException When the access token received from zettle is expired. Should not happen
+     */
+    public function refreshAccessToken(?AccessToken $accessToken = null): AccessToken
     {
         $accessToken ??= $this->accessToken;
 
@@ -229,16 +236,7 @@ class GuzzleIzettleClient implements IzettleClientInterface
 
     private function getAuthorizationHeader(): array
     {
-        $this->validateAccessToken();
-
         return ['Authorization' => sprintf('Bearer %s', $this->accessToken->getToken())];
-    }
-
-    private function validateAccessToken(): void
-    {
-        if ($this->accessToken->isExpired()) {
-            throw new AccessTokenExpiredException(sprintf('Access Token was valid till \'%s\' it\'s now \'%s\'', $this->accessToken->getExpiry()->format('Y-m-d H:i:s.u'), (new \DateTime())->format('Y-m-d H:i:s.u')));
-        }
     }
 
     /**
@@ -250,7 +248,6 @@ class GuzzleIzettleClient implements IzettleClientInterface
         $options = array_merge($headers, $options);
 
         $response = $this->guzzleClient->post($url, $options);
-        var_dump($response->getBody()->getContents());
 
         // Deserialize the response from the zettle API to an AccessToken object
         return $this->deserializeJson($response->getBody()->getContents(), AccessToken::class);

@@ -21,13 +21,18 @@ final class AccessToken
     private ?string $refreshToken;
 
     /**
-     * @throws \DateMalformedStringException should not happen, as the date modify string is always properly formatted
+     * @throws \LogicException should not happen, as the date modify string is always properly formatted
      */
     public function __construct(string $accessToken, int $expiresIn, ?string $refreshToken)
     {
         $this->accessToken = $accessToken;
         $this->expiresIn = $expiresIn;
-        $this->expiry = (new \DateTimeImmutable())->modify('+' . $expiresIn . ' seconds');
+
+        try {
+            $this->expiry = (new \DateTimeImmutable())->modify('+' . $expiresIn . ' seconds');
+        } catch (\DateMalformedStringException) {
+            throw new \LogicException('Date modification in AccessToken failed.');
+        }
         $this->refreshToken = $refreshToken;
     }
 

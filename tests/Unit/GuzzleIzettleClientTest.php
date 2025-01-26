@@ -4,20 +4,19 @@ declare(strict_types=1);
 
 namespace GlobyApp\Zettle\Tests\Unit;
 
-use DateTime;
-use DateTimeImmutable;
 use GlobyApp\Zettle\API\Universal\IzettlePostable;
 use GlobyApp\Zettle\Client\ApiScope;
 use GlobyApp\Zettle\Client\Exception\AccessTokenExpiredException;
 use GlobyApp\Zettle\Client\Exception\AccessTokenNotRefreshableException;
 use GlobyApp\Zettle\Data\AccessToken;
 use GlobyApp\Zettle\GuzzleIzettleClient;
+use GlobyApp\Zettle\IzettleClientInterface;
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\ClientInterface as GuzzleClientInterface;
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-use Mockery;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
@@ -47,7 +46,7 @@ final class GuzzleIzettleClientTest extends TestCase
             $apiScope->getUrlParameters()
         );
 
-        $accessTokenFactory = new GuzzleIzettleClient(Mockery::mock(GuzzleClient::class), self::CLIENT_ID, self::CLIENT_SECRET);
+        $accessTokenFactory = new GuzzleIzettleClient(\Mockery::mock(GuzzleClient::class), self::CLIENT_ID, self::CLIENT_SECRET);
         $authoriseUserLoginUrl =  $accessTokenFactory->authoriseUserLogin($redirectUrl, $apiScope);
 
         $this->assertSame($expectedUrl, $authoriseUserLoginUrl);
@@ -77,9 +76,9 @@ final class GuzzleIzettleClientTest extends TestCase
         $mockHandler = new MockHandler([
             new Response(200, [], json_encode(
                 [
-                'access_token' => $accessToken,
-                'expires_in' => $expiresIn,
-                'refresh_token' => $refreshToken,
+                    'access_token' => $accessToken,
+                    'expires_in' => $expiresIn,
+                    'refresh_token' => $refreshToken,
                 ]
             )),
         ]);
@@ -94,7 +93,7 @@ final class GuzzleIzettleClientTest extends TestCase
         $this->assertSame($accessToken, $accessTokenObject->getToken());
         $this->assertSame($refreshToken, $accessTokenObject->getRefreshToken());
         $this->assertEquals(
-            (new DateTime($expiresIn . ' second'))->format('Y-m-d H:i:s'),
+            (new \DateTime($expiresIn . ' second'))->format('Y-m-d H:i:s'),
             $accessTokenObject->getExpiresIn()->format('Y-m-d H:i:s')
         );
     }
@@ -119,8 +118,8 @@ final class GuzzleIzettleClientTest extends TestCase
         $mockHandler = new MockHandler([
             new Response(200, [], json_encode(
                 [
-                'access_token' => $accessToken,
-                'expires_in' => $expiresIn,
+                    'access_token' => $accessToken,
+                    'expires_in' => $expiresIn,
                 ]
             )),
         ]);
@@ -135,17 +134,19 @@ final class GuzzleIzettleClientTest extends TestCase
         $this->assertSame($accessToken, $accessTokenObject->getToken());
         $this->assertNull($accessTokenObject->getRefreshToken());
         $this->assertEquals(
-            (new DateTime($expiresIn . ' second'))->format('Y-m-d H:i:s'),
+            (new \DateTime($expiresIn . ' second'))->format('Y-m-d H:i:s'),
             $accessTokenObject->getExpiresIn()->format('Y-m-d H:i:s')
         );
     }
 
     /**
-     * @test
+     * @throws \DateMalformedStringException
+     * @throws AccessTokenExpiredException
+     * @throws GuzzleException
      */
-    public function refreshAccessToken(): void
+    public function testRefreshAccessToken(): void
     {
-        $oldAccessToken = new AccessToken('accessToken', new DateTimeImmutable(), 'refreshToken');
+        $oldAccessToken = new AccessToken('accessToken', 0, 'refreshToken');
         $newAccessToken = 'accessToken2';
         $newRefreshToken = 'refreshToken2';
         $newExpiresIn = 7200;
@@ -153,7 +154,7 @@ final class GuzzleIzettleClientTest extends TestCase
         $options = [
             'headers' => ['Content-Type' => 'application/x-www-form-urlencoded'],
             'form_params' => [
-                'grant_type' => GuzzleIzettleClient::API_ACCESS_TOKEN_REFRESH_TOKEN_GRANT,
+                'grant_type' => IzettleClientInterface::API_ACCESS_TOKEN_REFRESH_TOKEN_GRANT,
                 'client_id' => self::CLIENT_ID,
                 'client_secret' => self::CLIENT_SECRET,
                 'refresh_token' => $oldAccessToken->getRefreshToken(),
@@ -170,20 +171,20 @@ final class GuzzleIzettleClientTest extends TestCase
             )),
         ]);
 
-        $handlerStack = HandlerStack::create($mockHandler);
-        $guzzleClient = new GuzzleClient(['handler' => $handlerStack]);
+        $mockedHandlerStack = HandlerStack::create($mockHandler);
+        $mockedGuzzleClient = new GuzzleClient(['handler' => $mockedHandlerStack]);
 
-        $accessTokenFactory = new GuzzleIzettleClient($guzzleClient, self::CLIENT_ID, self::CLIENT_SECRET);
+        $accessTokenFactory = new GuzzleIzettleClient($mockedGuzzleClient, self::CLIENT_ID, self::CLIENT_SECRET);
         $accessTokenObject = $accessTokenFactory->refreshAccessToken($oldAccessToken);
 
         $this->assertSame($newAccessToken, $accessTokenObject->getToken());
         $this->assertSame($newRefreshToken, $accessTokenObject->getRefreshToken());
         $this->assertEquals(
-            (new DateTime($newExpiresIn . ' second'))->format('Y-m-d H:i:s'),
-            $accessTokenObject->getExpiresIn()->format('Y-m-d H:i:s')
+            (new \DateTime($newExpiresIn . ' second'))->format('Y-m-d H:i:s'),
+            $accessTokenObject->getExpiry()->format('Y-m-d H:i:s')
         );
 
-        $fixedToken = new AccessToken('test', new DateTimeImmutable(), null);
+        $fixedToken = new AccessToken('test', 0, null);
 
         $this->expectException(AccessTokenNotRefreshableException::class);
         $accessTokenFactory->refreshAccessToken($fixedToken);
@@ -191,6 +192,7 @@ final class GuzzleIzettleClientTest extends TestCase
 
     /**
      * @test
+     *
      * @dataProvider getGetData
      */
     public function get($url, $queryParameters): void
@@ -202,8 +204,8 @@ final class GuzzleIzettleClientTest extends TestCase
             'query' => $queryParameters,
         ];
 
-        $guzzleClientMock = Mockery::mock(GuzzleClientInterface::class);
-        $guzzleClientMock->shouldReceive('get')->with($url, $options)->once()->andReturn(Mockery::mock(ResponseInterface::class));
+        $guzzleClientMock = \Mockery::mock(GuzzleClientInterface::class);
+        $guzzleClientMock->shouldReceive('get')->with($url, $options)->once()->andReturn(\Mockery::mock(ResponseInterface::class));
 
         $izettleClient = new GuzzleIzettleClient($guzzleClientMock, self::CLIENT_ID, self::CLIENT_SECRET);
         $izettleClient->setAccessToken($this->getAccessToken());
@@ -221,6 +223,7 @@ final class GuzzleIzettleClientTest extends TestCase
 
     /**
      * @test
+     *
      * @dataProvider getPostData
      */
     public function post($url, IzettlePostable $data): void
@@ -234,8 +237,8 @@ final class GuzzleIzettleClientTest extends TestCase
             'body' => $data->getPostBodyData(),
         ];
 
-        $guzzleClientMock = Mockery::mock(GuzzleClientInterface::class);
-        $guzzleClientMock->shouldReceive('post')->with($url, $options)->once()->andReturn(Mockery::mock(ResponseInterface::class));
+        $guzzleClientMock = \Mockery::mock(GuzzleClientInterface::class);
+        $guzzleClientMock->shouldReceive('post')->with($url, $options)->once()->andReturn(\Mockery::mock(ResponseInterface::class));
 
         $izettleClient = new GuzzleIzettleClient($guzzleClientMock, self::CLIENT_ID, self::CLIENT_SECRET);
         $izettleClient->setAccessToken($this->getAccessToken());
@@ -244,7 +247,7 @@ final class GuzzleIzettleClientTest extends TestCase
 
     public function getPostData(): array
     {
-        $postable = Mockery::mock(IzettlePostable::class);
+        $postable = \Mockery::mock(IzettlePostable::class);
         $postable->shouldReceive('getPostBodyData')->once();
 
         return [
@@ -255,6 +258,7 @@ final class GuzzleIzettleClientTest extends TestCase
 
     /**
      * @test
+     *
      * @dataProvider getPutData
      */
     public function put($url, $data): void
@@ -268,7 +272,7 @@ final class GuzzleIzettleClientTest extends TestCase
             'body' => $data,
         ];
 
-        $guzzleClientMock = Mockery::mock(GuzzleClientInterface::class);
+        $guzzleClientMock = \Mockery::mock(GuzzleClientInterface::class);
         $guzzleClientMock->shouldReceive('put')->with($url, $options)->once();
 
         $izettleClient = new GuzzleIzettleClient($guzzleClientMock, self::CLIENT_ID, self::CLIENT_SECRET);
@@ -286,6 +290,7 @@ final class GuzzleIzettleClientTest extends TestCase
 
     /**
      * @test
+     *
      * @dataProvider getDeleteData
      */
     public function delete($url): void
@@ -296,7 +301,7 @@ final class GuzzleIzettleClientTest extends TestCase
             ],
         ];
 
-        $guzzleClientMock = Mockery::mock(GuzzleClientInterface::class);
+        $guzzleClientMock = \Mockery::mock(GuzzleClientInterface::class);
         $guzzleClientMock->shouldReceive('delete')->with($url, $options)->once();
 
         $izettleClient = new GuzzleIzettleClient($guzzleClientMock, self::CLIENT_ID, self::CLIENT_SECRET);
@@ -317,9 +322,9 @@ final class GuzzleIzettleClientTest extends TestCase
     public function getJson(): void
     {
         $data = 'getJsonTest';
-        $responseMock =  Mockery::mock(ResponseInterface::class);
+        $responseMock =  \Mockery::mock(ResponseInterface::class);
 
-        $streamMock = Mockery::mock(StreamInterface::class);
+        $streamMock = \Mockery::mock(StreamInterface::class);
         $streamMock->shouldReceive('getContents')->once()->andReturn($data);
 
         $responseMock->shouldReceive('getBody')->once()->andReturn($streamMock);
@@ -346,5 +351,15 @@ final class GuzzleIzettleClientTest extends TestCase
     protected function getAccessToken(): AccessToken
     {
         return new AccessToken(self::ACCESS_TOKEN, 86400, '');
+    }
+
+    public function testZettleReturnsExpiredAccessToken(): void
+    {
+        // TODO: Let the refreshAccessToken method throw an AccessTokenExpiredException
+    }
+
+    public function testAuthoriseUserLoginUrl(): void
+    {
+        // TODO: test whether the authoriseUserLogin method returns the expected URL format
     }
 }

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace GlobyApp\Zettle\Tests\Integration\Client;
 
-use DateTimeImmutable;
 use GlobyApp\Zettle\Data\AccessToken;
 use GlobyApp\Zettle\GuzzleIzettleClient;
 use GuzzleHttp\Client as GuzzleClient;
@@ -15,8 +14,8 @@ use PHPUnit\Framework\TestCase;
 
 abstract class AbstractClientTest extends TestCase
 {
-    public const CLIENT_ID = 'clientId';
-    public const CLIENT_SECRET = 'clientSecret';
+    public const string CLIENT_ID = 'clientId';
+    public const string CLIENT_SECRET = 'clientSecret';
 
     protected function getGuzzleIzettleClient(int $status, string $body): GuzzleIzettleClient
     {
@@ -29,8 +28,11 @@ abstract class AbstractClientTest extends TestCase
         return $izettleClient;
     }
 
+    /**
+     * @throws \LogicException
+     */
     private function getAccessToken(): AccessToken
     {
-        return new AccessToken('', new DateTimeImmutable('+ 1 day'), '');
+        return new AccessToken('', 84600, '');
     }
 }
